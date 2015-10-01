@@ -61,15 +61,16 @@ function reverse(someString){
 // ---------------------
 
 function findLongestWord(words){
-
+  var biggest = 0;
   var theAnswer = words.forEach(function(currentWord) {
-    var biggest = currentWord.length;
     if (currentWord.length > biggest) {
-    biggest = currentWord.length;
+    currentWord.length = biggest;
     };
-    console.log(biggest);
   });
+ return theAnswer;
 };
+
+// I'm not sure why this doesn't work?
 
 
 // ---------------------
