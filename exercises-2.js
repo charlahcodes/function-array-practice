@@ -36,12 +36,31 @@ function isVowel(char){
     };
 };
 
+// other solution
+function isVowelToo(char) {
+  var vowels = 'aeiou';
+  if (vowels.indexOf(char) != -1) {
+    return true;
+  } 
+  return false;
+}
+
 // ---------------------
 // Write a function translate() that will translate a text into "rÃ¶varsprÃ¥ket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
 // ---------------------
 
 function rovarspraket(phrase){
+  var chars = phrase.split('');
+  var finalPhrase = [];
 
+  chars.forEach( function (char) {
+    if (!isVowelToo(char) && char != '') { 
+      finalPhrase.push(char + 'o' + char);
+    } else {
+      finalPhrase.push(char);
+    }
+  })
+  return finalPhrase.join('');
 }
 
 
@@ -63,12 +82,12 @@ function reverse(someString){
 function findLongestWord(words){
   var biggest = 0;
   var theAnswer = words.forEach(function(currentWord) {
-    if (currentWord.length > biggest) {
-    currentWord.length = biggest;
-    };
-  });
- return theAnswer;
-};
+      if (currentWord.length > biggest) {
+      currentWord.length = biggest;
+      };
+    });
+   return theAnswer;
+  };
 
 // I'm not sure why this doesn't work?
 
