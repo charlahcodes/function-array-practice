@@ -79,18 +79,15 @@ function reverse(someString){
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------
 
-function findLongestWord(words){
-  var biggest = 0;
-  var theAnswer = words.forEach(function(currentWord) {
-      if (currentWord.length > biggest) {
-      currentWord.length = biggest;
-      };
-    });
-   return theAnswer;
-  };
-
-// I'm not sure why this doesn't work?
-
+  function findLongestWord(words){
+    var biggest = 0;
+    var theAnswer = words.forEach(function(currentWord) {
+        if (currentWord.length > biggest) {
+        biggest = currentWord.length;
+        };
+      });
+    return biggest;
+    };
 
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
